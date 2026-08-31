@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS Inventory - Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center" style="height: 100vh;">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5 text-center">
+                <h4 class="mb-4 text-secondary">Welcome back to POS Inventory</h4>
+                <div class="card shadow-sm border-0 mt-3 p-4">
+                    <div class="card-body">
+                        <form action="dashboard.html" method="GET">
+                            <div class="row mb-4 text-start">
+                                <div class="col-6">
+                                    <label for="username" class="form-label text-muted small">UserName</label>
+                                    <input type="text" class="form-control" id="username" placeholder="USER02" required>
+                                </div>
+                                <div class="col-6">
+                                    <label for="password" class="form-label text-muted small">Password</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="password" value="********" required>
+                                        <span class="input-group-text bg-white border-start-0 cursor-pointer">
+                                            <i class="fa fa-eye-slash text-muted"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary rounded-pill px-4">Click to Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

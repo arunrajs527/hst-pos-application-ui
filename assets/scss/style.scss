@@ -1,0 +1,174 @@
+// Variables
+$primary-color: #0056b3;
+$sidebar-width: 250px;
+$topbar-height: 60px;
+$bg-light: #f4f6f9;
+$border-color: #dee2e6;
+$text-muted: #6c757d;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: $bg-light;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+// Sidebar Overlay
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  
+  &.active {
+    display: block;
+  }
+}
+
+// Sidebar
+#sidebar {
+  min-width: $sidebar-width;
+  max-width: $sidebar-width;
+  background: #fff;
+  color: #333;
+  transition: all 0.3s;
+  border-right: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+
+  // Responsive logic
+  @media (max-width: 768px) {
+    margin-left: -$sidebar-width;
+    position: absolute;
+    height: 100vh;
+
+    &.active {
+      margin-left: 0;
+    }
+  }
+
+  .sidebar-header {
+    padding: 15px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    height: $topbar-height;
+    
+    h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: $primary-color;
+      font-weight: bold;
+    }
+  }
+
+  .user-profile-section {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lighten($border-color, 5%);
+    
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+
+  ul.components {
+    padding: 10px 0;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  ul li a {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    display: block;
+    color: #555;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-color;
+      background: #f8f9fa;
+    }
+    
+    i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    }
+  }
+
+  ul li.active > a,
+  a[aria-expanded="true"] {
+    color: $primary-color;
+    background: #f1f5fa;
+    border-left: 3px solid $primary-color;
+  }
+
+  ul ul a {
+    font-size: 0.85rem;
+    padding-left: 40px;
+  }
+}
+
+// Topbar
+.topbar {
+  height: $topbar-height;
+  background: #0d6efd; 
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .search-bar {
+    position: relative;
+    width: 300px;
+    
+    input {
+      width: 100%;
+      padding: 5px 15px 5px 35px;
+      border-radius: 20px;
+      border: none;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      
+      &::placeholder {
+        color: rgba(255,255,255,0.7);
+      }
+    }
+    
+    i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+    }
+  }
+}
+
+// And so on... (matching the css structure for SCSS requirement)
