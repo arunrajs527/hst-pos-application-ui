@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Sidebar toggle functionality
-    const sidebarCollapse = document.getElementById('sidebarCollapse');
+    const sidebarToggles = document.querySelectorAll('#sidebarCollapse, .sidebar-toggle');
     const sidebar = document.getElementById('sidebar');
     
     // Create overlay element
@@ -8,10 +8,12 @@ document.addEventListener("DOMContentLoaded", function() {
     overlay.className = 'sidebar-overlay';
     document.body.appendChild(overlay);
 
-    if (sidebarCollapse && sidebar) {
-        sidebarCollapse.addEventListener('click', function () {
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
+    if (sidebarToggles.length > 0 && sidebar) {
+        sidebarToggles.forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
         });
 
         overlay.addEventListener('click', function() {
