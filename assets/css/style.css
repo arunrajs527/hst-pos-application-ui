@@ -210,6 +210,17 @@ a[aria-expanded="true"] {
     color: #e0e7ff;
 }
 
+/* Fix dropdown text color */
+.topbar-icons .dropdown-menu a {
+    color: #374151;
+    font-size: 0.9rem;
+    margin-left: 0;
+}
+.topbar-icons .dropdown-menu a:hover {
+    color: var(--primary-color);
+    background-color: #f3f4f6;
+}
+
 .topbar-icons .dropdown-toggle::after {
     display: none;
 }
@@ -242,11 +253,16 @@ a[aria-expanded="true"] {
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .page-header h5 {
     font-weight: 600;
     color: #1f2937;
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 /* Cards & Tables */
@@ -389,6 +405,7 @@ div.dataTables_wrapper div.dataTables_length select {
     display: inline-block;
     border: 1px solid var(--border-color);
     border-radius: 6px;
-    padding: 6px 12px;
+    padding: 6px 30px 6px 12px; /* Increased right padding for caret */
     font-size: 0.9rem;
+    background-position: right 0.75rem center;
 }
